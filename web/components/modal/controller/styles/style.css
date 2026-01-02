@@ -1,0 +1,49 @@
+body>main>*:not(.modal){
+	user-select: none;
+	pointer-events: none;
+	filter: blur(15px);
+}
+.modal{
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	translate: -50% -50%;
+	z-index: 2000;
+	background-color: var(--white);
+	border-radius: min(32px, 2vw);
+	border: 1px solid var(--blue-o-1);
+	box-shadow: 0 8px 16px 4px var(--black-o);
+	outline: none;
+	opacity: 0;
+	backdrop-filter: blur(2px);
+	animation: fadeIn .1s ease-out 0s 1 normal forwards;
+	display: grid;
+	place-items: center;
+}
+#close-modal{
+	position: absolute;
+	top: -8px;
+	right: 8px;
+
+	border: none;
+	background-color: transparent;
+	color: var(--violet);
+	font-size: 2em;
+	transition: color .1s linear 0s;
+}
+#close-modal:hover{
+	color: var(--green-1);
+}
+@keyframes fadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(-16px);
+	}
+	80% {
+		opacity: .8;
+		transform: translateY(0);
+	}
+	100% {
+		opacity: 1;
+	}
+}

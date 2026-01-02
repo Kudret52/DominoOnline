@@ -1,0 +1,122 @@
+#signUp-form{
+	width: min(778px,90vw);
+	min-height: 75vh;
+	padding: 32px min(16px, 2vw);
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	gap: 32px;
+	overflow: auto;
+}
+#signUp-form fieldset{
+	border: none;
+	width: 100%;
+
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: 32px;
+}
+#signUp-form fieldset:first-child{
+	flex-direction: column;
+}
+#signUp-form legend{
+	margin-bottom: 32px;
+	margin-inline: auto;
+	font-size: calc(1em - calc(778px - 100vw) / 128);
+}
+#signUp-form label{
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-wrap: wrap;
+	max-width: 100%;
+
+	font-size: calc(1em - calc(778px - 100vw) / 128);
+}
+#signUp-form input{
+	background-color: transparent;
+	border: none;
+}
+#signUp-form input[type="text"]{
+	width: 90%;
+	font-size: .8em;
+	border-radius: 32px;
+	border: 2px solid var(--violet);
+	padding: 8px min(16px, 4vw);
+	text-indent: 2px;
+}
+#signUp-form input[type="text"]:focus{
+	outline: none;
+	box-shadow: 0 0 8px 4px var(--blue-2);
+}
+#signUp-form input[type="text"]:autofill{
+	background-color: transparent;
+}
+#signUp-form input[type="text"]:-webkit-autofill{
+	background-color: transparent;
+}
+#signUp-form #avatar{
+	width: min(256px, 70%);
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	color: transparent;
+	text-shadow: none;
+	overflow: hidden;
+	background-image: url('/assets/images/default-avatar.svg');
+	box-shadow: 0 0 32px -4px var(--blue-2);
+}
+#signUp-form #avatar::file-selector-button{
+	display: none;
+}
+#signUp-form #avatar:not(.completed){
+	animation: pulse 1s linear 0s infinite both;
+}
+#signUp-form fieldset:last-child button{
+	padding: 8px 16px;
+	border-radius: 8px;
+	border: none;
+	font-size:  calc(.9em - calc(778px - 100vw) / 128);
+}
+#signUp-form fieldset:last-child button:first-child{
+	background-color: transparent;
+	color: brown;
+}
+#signUp-form fieldset:last-child button:first-child:hover{
+	color: var(--violet);
+}
+#signUp-form fieldset:last-child button:last-child{
+	background-color: var(--blue-2);
+	color: var(--white);
+}
+#signUp-form fieldset:last-child button:last-child:hover{
+	background-color: var(--violet);
+}
+#signUp-form .response{
+	font-size: calc(.8em - calc(778px - 100vw) / 128);
+	width: 100%;
+	padding-block: 16px;
+	display: grid;
+	place-items: center;
+	flex-grow: 1;
+	text-align: center;
+}
+.response.ok{
+	color: var(--blue-2);
+	background-color: var(--blue-o-2);
+	border-block: 2px solid var(--blue-3);
+}
+.response.error{
+	color: brown;
+	background-color: rgba(165, 42, 42, 0.521);
+	border-block: 2px solid brown;
+}
+@keyframes pulse {
+	0%, 100% {
+		box-shadow: 0 0 32px -4px var(--blue-2);
+	}
+	50% {
+		box-shadow: 0 0 32px 8px var(--blue-2);
+	}
+}

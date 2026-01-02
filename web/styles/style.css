@@ -1,0 +1,40 @@
+@font-face {
+	font-family: Inter-R;
+	src: url('/assets/fonts/Inter-Regular.woff2') format('woff2');
+}
+@font-face {
+	font-family: Inter-M;
+	src: url('/assets/fonts/Inter-Medium.woff2') format('woff2');
+}
+:root{
+	--violet: #5c4b8d;
+	--rose: #D9B8C4;
+	--blue-1: #B9E6FF;
+	--blue-2: #5C95FF;
+	--blue-3: #6DAEDB;
+	--blue-o-1: #B9E6FF35;
+	--blue-o-2: #5C95FF35;
+	--blue-o-3: #6DAEDB35;
+	--green-1: #053225;
+	--green-2: #03130e;
+	--white: #f6f8fd;
+	--black-o: #22222255;
+
+	font-size: 24px;
+}
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: Inter-R, sans-serif, serif;
+	text-shadow: 0 0 2px var(--black-o);
+}
+html, body, body>main{
+	min-height: 100vh;
+}
+h1, h2, h3{
+	font-family: Inter-M, sans-serif, serif;
+}
+body, main{
+	overflow-y: auto;
+}

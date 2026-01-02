@@ -1,0 +1,31 @@
+{
+  "name": "domino",
+  "version": "1.0.0",
+  "description": "A fun online game of Dominoes.",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+		"api": "node --watch ./web/api/server.js",
+
+    "test-1": "node ./web/tests/randNumGenerate.test.js",
+    "test-2": "node ./web/tests/startCards.test.js",
+    "test-3": "node ./web/tests/arrayCards.test.js",
+    "test-4": "node ./web/tests/textToBlob.test.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "cors": "2.8.5",
+    "express": "4.19.2",
+    "mysql2": "3.10.0",
+    "socket.io": "4.7.5"
+  },
+  "devDependencies": {
+    "standard": "17.1.0"
+  },
+  "eslintConfig": {
+    "extends": "standard",
+    "eslintDisable": "camelcase"
+  }
+}
