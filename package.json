@@ -2,11 +2,11 @@
   "name": "domino",
   "version": "1.0.0",
   "description": "A fun online game of Dominoes.",
-  "main": "index.js",
+  "main": "web/api/server.js",
   "type": "module",
   "scripts": {
-		"api": "node --watch ./web/api/server.js",
-
+    "start": "node web/api/server.js",
+    "api": "node --watch ./web/api/server.js",
     "test-1": "node ./web/tests/randNumGenerate.test.js",
     "test-2": "node ./web/tests/startCards.test.js",
     "test-3": "node ./web/tests/arrayCards.test.js",
