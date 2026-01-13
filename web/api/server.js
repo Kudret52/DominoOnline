@@ -1,19 +1,27 @@
 import express from 'express'
-import { createServer } from 'node:http'
-import { middlewares } from './middlewares/middlewares.js'
-import { webSocketConnection } from './websocket/server.js'
-import { apiRestConnection } from './rest/server.js'
+import http from 'http'
+import { Server } from 'socket.io'
 
 const app = express()
-const server = createServer(app)
+const server = http.createServer(app)
 
-middlewares(app)
+const io = new Server(server, {
+  cors: {
+    origin: ['https://cadinindiyari.com'], // senin domainin
+    methods: ['GET', 'POST'],
+    credentials: true
+  }
+})
 
-//* Server connections 
-webSocketConnection(server)
-apiRestConnection(app)
+io.on('connection', (socket) => {
+  console.log('Bir kullanıcı bağlandı:', socket.id)
 
-const PORT = process.env.PORT ?? 3080
+  socket.on('disconnect', () => {
+    console.log('Kullanıcı ayrıldı:', socket.id)
+  })
+})
+
+const PORT = process.env.PORT || 8080
 server.listen(PORT, () => {
-  console.log(`Server is running on http://localhost:${PORT}`)
+  console.log(`Server ${PORT} portunda çalışıyor`)
 })
